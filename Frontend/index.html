@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FCKPS Admin Console</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>Food Court Kiosk & Pickup System</h1>
+      <p class="subtitle">Admin & Vendor Dashboard (CSE 412 Project)</p>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2>Menu Items</h2>
+        <div class="panel-description">
+          View all menu items and their availability across vendors.
+        </div>
+        <div class="toolbar">
+          <button onclick="loadMenu()">Refresh Menu</button>
+        </div>
+        <div class="table-wrapper">
+          <table id="menu-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Vendor</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price ($)</th>
+                <th>Available</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Operations</h2>
+
+        <div class="card">
+          <h3>Add Menu Item</h3>
+          <p class="card-description">Insert a new item into the menu.</p>
+          <label>Vendor
+            <select id="add-vendor">
+              <option value="">Select vendor</option>
+            </select>
+          </label>
+
+          <label>Item name
+            <input id="add-name" type="text" placeholder="Cheeseburger">
+          </label>
+
+          <label>Description
+            <input id="add-description" type="text" placeholder="Optional description">
+          </label>
+
+          <label>Category
+            <input id="add-category" type="text" placeholder="Main / Snacks / Drinks">
+          </label>
+
+          <label>Price ($)
+            <input id="add-price" type="number" step="0.01" min="0">
+          </label>
+
+          <button onclick="addItem()">Add Item</button>
+          <div class="status" id="add-status"></div>
+        </div>
+
+        <div class="card">
+          <h3>Update Order Status</h3>
+          <p class="card-description">
+            Mark an existing order as <strong>READY</strong>.
+          </p>
+          <label>Order ID
+            <input id="order-id" type="number" min="1" placeholder="e.g., 1">
+          </label>
+          <button onclick="updateOrder()">Mark as READY</button>
+          <div class="status" id="order-status"></div>
+        </div>
+
+        <div class="card">
+          <h3>Disable Menu Item</h3>
+          <label>Item ID
+            <input id="disable-id" type="number" min="1" placeholder="e.g., 2">
+          </label>
+          <button class="danger" onclick="disableItem()">Disable Item</button>
+          <div class="status" id="disable-status"></div>
+        </div>
+
+      </section>
+    </main>
+
+    <footer>
+      <small>CSE 412 &middot; Food Court Kiosk & Pickup System</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

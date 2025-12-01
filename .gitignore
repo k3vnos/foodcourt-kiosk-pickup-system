@@ -1,0 +1,42 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.pytest_cache/
+*.pkl
+
+# Flask instance config
+instance/
+*.db
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Logs
+*.log
+
+# PyCharm / VSCode
+.idea/
+.vscode/
+
+# Node modules (if ever used)
+node_modules/
+
+# Backup files
+*.bak
+*.swp
+
+# sqlite (if created accidentally)
+*.sqlite3
+*.sqlite
