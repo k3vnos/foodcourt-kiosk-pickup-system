@@ -40,3 +40,5 @@ node_modules/
 # sqlite (if created accidentally)
 *.sqlite3
 *.sqlite
+
+.env
