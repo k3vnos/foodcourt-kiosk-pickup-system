@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Check Order Status · FCKPS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>Food Court Kiosk &amp; Pickup System</h1>
+      <p class="subtitle">
+        Customer Order Status
+      </p>
+      <p class="subtitle">
+        <a href="index.html" style="color:#60a5fa; text-decoration:none;">Admin Dashboard</a>
+        &nbsp;·&nbsp;
+        <a href="customer.html" style="color:#60a5fa; text-decoration:none;">Place a New Order</a>
+      </p>
+    </header>
+
+    <main>
+      <!-- Left: form -->
+      <section class="panel">
+        <h2>Find Your Order</h2>
+        <div class="panel-description">
+          Enter your <strong>Order ID</strong> to see its current status.
+        </div>
+
+        <div class="card">
+          <h3>Order Lookup</h3>
+          <p class="card-description">
+            You can find the Order ID from the confirmation screen when you placed your order.
+          </p>
+
+          <label>Order ID
+            <input id="status-order-id" type="number" min="1" placeholder="e.g., 1">
+          </label>
+
+          <button type="button" onclick="checkOrderStatus()">Check Status</button>
+          <div class="status" id="status-message"></div>
+        </div>
+      </section>
+
+      <!-- Right: result -->
+      <section class="panel">
+        <h2>Order Details</h2>
+        <div class="panel-description">
+          Summary of the order you searched for.
+        </div>
+
+        <div id="status-result" class="card">
+          <p class="card-description">
+            No order selected yet. Enter an Order ID and click <strong>Check Status</strong>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <small>CSE 412 &middot; Food Court Kiosk &amp; Pickup System</small>
+    </footer>
+  </div>
+
+  <script src="order-status.js"></script>
+</body>
+</html>

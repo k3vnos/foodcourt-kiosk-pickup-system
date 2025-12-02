@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FCKPS Customer Order</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1 class="page-title">Order from the Food Court</h1>
+      <p class="page-subtitle">
+        Browse menu items, add them to your tray, and place an order.
+      </p>
+      <p class="subtitle">
+        <a href="index.html">Admin &amp; Vendor Dashboard</a> ·
+        <a href="order-status.html">Check Order Status</a>
+      </p>
+    </header>
+
+    <main style="grid-template-columns: 3fr 2fr;">
+      <!-- Menu side -->
+      <section class="panel">
+        <h2>Menu</h2>
+        <p class="panel-description">
+          Choose a vendor and add items to your order.
+        </p>
+
+        <div class="card">
+          <label>Vendor
+            <select id="cust-vendor-select"></select>
+          </label>
+        </div>
+
+        <div id="cust-menu-list"></div>
+      </section>
+
+      <!-- Cart side -->
+      <section class="panel">
+        <h2>Your Tray</h2>
+        <p class="panel-description">
+          Review your selections and enter your details before placing the order.
+        </p>
+
+        <div id="cart-items"></div>
+
+        <div class="card">
+          <h3>Customer Details</h3>
+          <label>Name
+            <input id="cust-name" type="text" placeholder="Optional (Guest allowed)">
+          </label>
+          <label>Email
+            <input id="cust-email" type="email" placeholder="For receipt / status lookup (optional)">
+          </label>
+          <label>Phone
+            <input id="cust-phone" type="tel" placeholder="Optional">
+          </label>
+        </div>
+
+        <div class="card">
+          <h3>Summary</h3>
+          <p class="card-description">
+            Total: <strong id="cart-total">$0.00</strong>
+          </p>
+          <button type="button" onclick="placeCustomerOrder()">Place Order</button>
+          <div class="status" id="cust-status"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <small>CSE 412 · Food Court Kiosk &amp; Pickup System</small>
+    </footer>
+  </div>
+
+  <script src="customer.js"></script>
+</body>
+</html>
